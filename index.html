@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>Grim Space Wars</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <div id="app">
+    <div id="menu">
+      <img id="logo" src="/logo.png" alt="GrimPixelz" />
+      <h1>GRIM SPACE WARS</h1>
+      <p class="subtitle">HOLDERS ONLY</p>
+      <p id="status">Connect your wallet to play</p>
+
+      <div id="nameSection" style="display:none;">
+        <input type="text" id="playerNameInput" placeholder="ENTER NAME" maxlength="12" />
+        <button id="setNameBtn">SET NAME</button>
+      </div>
+
+      <button id="connectBtn">Connect Wallet</button>
+      <button id="howToPlayBtn">How to Play</button>
+      <button id="playAgainBtn" style="display:none;">Play Again</button>
+    </div>
+
+    <div id="gameContainer" style="display:none;">
+      <div id="hud">
+        <div id="scoreContainer">
+          <img id="scoreIcon" src="/scoreicon.png" alt="score" />
+          <span id="score">0</span>
+        </div>
+        <div id="healthContainer">
+          <img id="heartIcon" src="/heart.png" alt="hp" />
+          <div id="healthBar"><div id="healthFill"></div></div>
+          <span id="healthText">100</span>
+        </div>
+      </div>
+      <canvas id="gameCanvas"></canvas>
+    </div>
+
+    <div id="leaderboardContainer">
+      <h2>HIGH SCORES</h2>
+      <ol id="leaderboard"></ol>
+    </div>
+
+    <!-- How to Play Modal -->
+    <div id="howToPlayModal" class="modal">
+      <div class="modal-content">
+        <h2>HOW TO PLAY</h2>
+        <div class="rules">
+          <div class="rule-item">
+            <img src="/grim1.png" alt="Grim" class="rule-img" />
+            <p><strong>YOU</strong><br>Move with mouse or finger. Dodge everything.</p>
+          </div>
+          <div class="rule-item">
+            <img src="/asteroid3.png" alt="Stroid" class="rule-img" />
+            <p><strong>AVOID</strong><br>Normal stroids damage you. Bigger ones hurt more.</p>
+          </div>
+          <div class="rule-item">
+            <img src="/love.png" alt="Love" class="rule-img" />
+            <p><strong>COLLECT</strong><br>Pink Love stroid restores health. It still moves during freeze.</p>
+          </div>
+          <div class="rule-item">
+            <img src="/timestop.png" alt="Time Stop" class="rule-img" />
+            <p><strong>FREEZE</strong><br>Blue Time-Stop freezes all normal stroids (on screen and incoming) for 10 seconds.</p>
+          </div>
+          <p style="margin-top:1rem;text-align:center;"><strong>SURVIVE</strong><br>Score rises over time. Grim evolves every 1000 points. Difficulty rises every 2000.</p>
+        </div>
+        <button id="closeHowToPlay">CLOSE</button>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
